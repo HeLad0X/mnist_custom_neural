@@ -1,1 +1,92 @@
- 
+
+# Neural Network from Scratch
+
+This project implements a neural network from scratch using basic Python libraries such as NumPy, SciPy, and Pandas, without relying on deep learning frameworks like PyTorch or TensorFlow. The neural network is trained on the MNIST dataset and consists of three layers: an input layer, a hidden layer, and an output layer.
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+The aim of this project is to gain a fundamental understanding of neural networks by building one from the ground up using only basic Python libraries. This approach allows for a deeper comprehension of core concepts such as forward propagation, backpropagation, and gradient descent.
+
+This implementation uses the MNIST dataset, a widely recognized dataset of handwritten digits, to train the neural network. The network architecture consists of three layers:
+- **Input Layer:** Takes in the pixel values of the MNIST images.
+- **Hidden Layer:** Contains neurons that process the input features.
+- **Output Layer:** Outputs the probabilities for each of the 10 digit classes (0-9).
+
+## Features
+
+- Custom neural network built using NumPy and SciPy.
+- Implementation of forward and backward propagation.
+- Gradient descent optimization.
+- Support for various activation functions (ReLU, Sigmoid, etc.).
+- Evaluation metrics for performance assessment (accuracy, loss).
+
+## Installation
+
+1. **Clone the repository:**
+    \`\`\`bash
+    git clone https://github.com/your-username/neural-network-from-scratch.git
+    \`\`\`
+
+2. **Navigate to the project directory:**
+    \`\`\`bash
+    cd neural-network-from-scratch
+    \`\`\`
+
+3. **Create and activate a virtual environment (optional but recommended):**
+    \`\`\`bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use \`venv\Scripts\activate\`
+    \`\`\`
+
+4. **Install the required dependencies:**
+    \`\`\`bash
+    pip install -r requirements.txt
+    \`\`\`
+
+## Usage
+
+1. **Prepare the MNIST dataset:**
+   The MNIST dataset will be automatically downloaded and preprocessed using the utility functions in the project.
+
+2. **Configure the Neural Network:**
+   Modify the network parameters such as the number of neurons in the hidden layer, learning rate, and the number of epochs in the `config.py` file.
+
+3. **Train the Model:**
+   Run the training script to start training the neural network on the MNIST dataset:
+    \`\`\`bash
+    python train.py
+    \`\`\`
+
+4. **Evaluate the Model:**
+   After training, evaluate the model's performance using the evaluation script:
+    \`\`\`bash
+    python evaluate.py
+    \`\`\`
+
+## Project Structure
+
+- `train.py`: The main script for training the neural network on the MNIST dataset.
+- `evaluate.py`: Script to evaluate the trained neural network.
+- `model.py`: Contains the implementation of the neural network class.
+- `config.py`: Configuration file for setting hyperparameters such as learning rate and number of neurons in the hidden layer.
+- `utils.py`: Utility functions for data preprocessing and other helper functions.
+- `requirements.txt`: List of required Python packages.
+- `data/`: Directory to store the MNIST dataset.
+- `notebooks/`: Jupyter notebooks for experimentation and visualization (optional).
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your improvements. Ensure that your code follows the project's coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
