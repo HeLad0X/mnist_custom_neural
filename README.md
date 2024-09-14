@@ -44,7 +44,8 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
 6. **Install the required dependencies and the dataset:**
     On Windows use `windows_startup.bat`
     On Linux use `chmod +x linux_script.sh` then run `linux_script.sh`
-    Note: The script uses public api from kaggle that needs to be setup by the user.
+    
+    **Note:** The script uses public api from kaggle that needs to be setup by the user.
     See: https://www.kaggle.com/docs/api
 
 ## Usage
