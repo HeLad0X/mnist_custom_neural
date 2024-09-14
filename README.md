@@ -32,25 +32,20 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
 ## Installation
 
 1. **Clone the repository:**
-    \`\`\`bash
-    git clone https://github.com/your-username/neural-network-from-scratch.git
-    \`\`\`
+    `git clone https://github.com/HeLad0X/mnist_custom_neural`
 
-2. **Navigate to the project directory:**
-    \`\`\`bash
-    cd neural-network-from-scratch
-    \`\`\`
+3. **Navigate to the project directory:**\
+    `cd mnist_custom_neural`
 
-3. **Create and activate a virtual environment (optional but recommended):**
-    \`\`\`bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use \`venv\Scripts\activate\`
-    \`\`\`
+4. **Create and activate a virtual environment (optional but recommended):**
+    `python -m venv venv`
+    `source venv/bin/activate`  # On Windows use `venv\Scripts\activate`
 
-4. **Install the required dependencies:**
-    \`\`\`bash
-    pip install -r requirements.txt
-    \`\`\`
+6. **Install the required dependencies and the dataset:**
+    On Windows use `windows_startup.bat`
+    On Linux use `chmod +x linux_script.sh` then run `linux_script.sh`
+    Note: The script uses public api from kaggle that needs to be setup by the user.
+    See: https://www.kaggle.com/docs/api
 
 ## Usage
 
@@ -81,7 +76,6 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
 - `utils.py`: Utility functions for data preprocessing and other helper functions.
 - `requirements.txt`: List of required Python packages.
 - `data/`: Directory to store the MNIST dataset.
-- `notebooks/`: Jupyter notebooks for experimentation and visualization (optional).
 
 ## Contributing
 
