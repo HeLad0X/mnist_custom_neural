@@ -19,14 +19,14 @@ The aim of this project is to gain a fundamental understanding of neural network
 This implementation uses the MNIST dataset, a widely recognized dataset of handwritten digits, to train the neural network. The network architecture consists of three layers:
 - **Input Layer:** Takes in the pixel values of the MNIST images.
 - **Hidden Layer:** Contains neurons that process the input features.
-- **Output Layer:** Outputs the probabilities for each of the 10 digit classes (0-9).
+- **Output Layer:** Outputs the probabilities for each of the 10-digit classes (0-9).
 
 ## Features
 
-- Custom neural network built using NumPy and SciPy.
+- Custom neural network built using cupy.
 - Implementation of forward and backward propagation.
-- Gradient descent optimization.
-- Support for various activation functions (ReLU, Sigmoid, etc.).
+- Gradient descent optimization and hyperparameter tuning.
+- Support for various activation functions (ReLU, Sigmoid, ReLU_derivative).
 - Evaluation metrics for performance assessment (accuracy, loss).
 
 ## Installation
@@ -34,31 +34,27 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
 1. **Clone the repository:**
     `git clone https://github.com/HeLad0X/mnist_custom_neural`
 
-3. **Navigate to the project directory:**\
+2. **Navigate to the project directory:**\
     `cd mnist_custom_neural`
 
-4. **Create and activate a virtual environment (optional but recommended):**
-    `python -m venv venv`
-    `source venv/bin/activate`  # On Windows use `venv\Scripts\activate`
-
-6. **Install the CUDA Drivers:**
-    The Script uses `cupy` instead of `numpy` to increase computation speed by utilizing GPU.
+3. **Install the CUDA Drivers:**
+    The Script uses `cupy` instead of `numpy` to increase the program's computation speed using GPU.
     For Windows users, using WSL2: `https://docs.nvidia.com/cuda/wsl-user-guide/index.html`
     For Linux users: `https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#meta-packages`
 
-    **Note:** You can still use `numpy` instead of `cupy`, change all occurance of cupy with numpy.
+    **Note:** You can still use `numpy` instead of `cupy`, change all occurrences of cupy with numpy.
 
-7. **Install the required dependencies and the dataset:**
+4. **Install the required dependencies and the dataset(Creates a virtual environment directory '.env' by default):**
     On Windows use `startup_script.sh` using git bash
     On Linux use `chmod +x startup_script.sh` then run `startup_script.sh`
     
-    **Note:** The script uses public api from kaggle that needs to be setup by the user.
+    **Note:** The script uses public API from Kaggle that needs to be set up by the user.
     See: https://www.kaggle.com/docs/api
 
 ## Usage
 
 1. **Prepare the MNIST dataset:**
-   The MNIST dataset will be automatically downloaded and preprocessed using the utility functions in the project.
+   The MNIST dataset will be automatically downloaded and preprocessed using the startup script and setup functions in the project.
 
 2. **Configure the Neural Network:**
    Modify the network parameters such as the number of neurons in the hidden layer, learning rate, and the number of epochs in the `config.py` file.
@@ -84,7 +80,8 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
 - `src/utils.py`: Utility functions for data preprocessing and other helper functions.
 - `requirements.txt`: List of required Python packages.
 - `data/`: Directory to store the MNIST dataset.
-- `src/train_tensor`: File with script that implements tensorflow and checks the accuracy of the dataset for cross validation.
+- `src/train_tensor`: File with a script that implements tensorflow and checks the accuracy of the dataset for cross-validation.
+- `startup_script.sh`: File with a script that creates an env in the current directory and installs all the required Python libraries and the MNIST dataset.
 
 ## Contributing
 
