@@ -163,6 +163,8 @@ pip-wheel-tags/
 .installed.cfg
 *.egg
 
-# build file and data
-build/
+# added files
+models/
 data/
+build/
+hyperparam_tuning/

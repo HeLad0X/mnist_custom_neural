@@ -1,2 +1,9 @@
-numpy
-kaggle
+cupy-cuda12x==13.3.0
+numpy==1.26.4
+kaggle==1.6.17
+wheel==0.44.0
+pickle5==0.0.11
+tensorflow==2.17.0
+keras==3.5.0
+keras-tuner==1.4.7
+scikit-learn==1.5.2

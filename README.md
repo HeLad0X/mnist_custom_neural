@@ -41,9 +41,16 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
     `python -m venv venv`
     `source venv/bin/activate`  # On Windows use `venv\Scripts\activate`
 
-6. **Install the required dependencies and the dataset:**
-    On Windows use `windows_startup.bat`
-    On Linux use `chmod +x linux_script.sh` then run `linux_script.sh`
+6. **Install the CUDA Drivers:**
+    The Script uses `cupy` instead of `numpy` to increase computation speed by utilizing GPU.
+    For Windows users, using WSL2: `https://docs.nvidia.com/cuda/wsl-user-guide/index.html`
+    For Linux users: `https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#meta-packages`
+
+    **Note:** You can still use `numpy` instead of `cupy`, change all occurance of cupy with numpy.
+
+7. **Install the required dependencies and the dataset:**
+    On Windows use `startup_script.sh` using git bash
+    On Linux use `chmod +x startup_script.sh` then run `startup_script.sh`
     
     **Note:** The script uses public api from kaggle that needs to be setup by the user.
     See: https://www.kaggle.com/docs/api
@@ -70,13 +77,14 @@ This implementation uses the MNIST dataset, a widely recognized dataset of handw
 
 ## Project Structure
 
-- `train.py`: The main script for training the neural network on the MNIST dataset.
-- `evaluate.py`: Script to evaluate the trained neural network.
-- `model.py`: Contains the implementation of the neural network class.
-- `config.py`: Configuration file for setting hyperparameters such as learning rate and number of neurons in the hidden layer.
-- `utils.py`: Utility functions for data preprocessing and other helper functions.
+- `src/train.py`: The main script for training the neural network on the MNIST dataset.
+- `src/evaluate.py`: Script to evaluate the trained neural network.
+- `src/model.py`: Contains the implementation of the neural network class.
+- `src/config.py`: Configuration file for setting hyperparameters such as learning rate and number of neurons in the hidden layer.
+- `src/utils.py`: Utility functions for data preprocessing and other helper functions.
 - `requirements.txt`: List of required Python packages.
 - `data/`: Directory to store the MNIST dataset.
+- `src/train_tensor`: File with script that implements tensorflow and checks the accuracy of the dataset for cross validation.
 
 ## Contributing
 
