@@ -1,7 +1,7 @@
 
 # Neural Network from Scratch
 
-This project implements a neural network from scratch using basic Python libraries such as NumPy, SciPy, and Pandas, without relying on deep learning frameworks like PyTorch or TensorFlow. The neural network is trained on the MNIST dataset and consists of three layers: an input layer, a hidden layer, and an output layer.
+This project implements a neural network from scratch using basic Python libraries such as NumPy, CuPy, and Pandas, without relying on deep learning frameworks like PyTorch or TensorFlow. The neural network is trained on the MNIST dataset and consists of three layers: an input layer, a hidden layer, and an output layer.
 
 ## Table of Contents
 - [Introduction](#introduction)
