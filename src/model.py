@@ -1,5 +1,5 @@
 import cupy as cp
-from utils import (
+from src.utils import (
                     init_params, 
                     ReLU, 
                     softmax, 
@@ -7,7 +7,7 @@ from utils import (
                     ReLU_derivative, 
                     compute_cost
                    )
-from config import ParamConfig
+from src.config import ParamConfig
 
 def forward_propagation(X, W1, b1, W2, b2):
     # Linear combination for the first layer
@@ -108,7 +108,7 @@ def hyperparameter_tuning(X_train, Y_train, W1, b1, W2, b2, learning_rates, epoc
             W1_temp, b1_temp = W1.copy(), b1.copy()
             W2_temp, b2_temp = W2.copy(), b2.copy()
             
-            # Train the model with current hyperparameters
+            # Train the model with cur[re]nt hyperparameters
             W1_temp, b1_temp, W2_temp, b2_temp = gradient_descent(X_train, Y_train, W1_temp, b1_temp, W2_temp, b2_temp, lr, epochs, batch_size)
 
             # Compute the cost with the current parameters

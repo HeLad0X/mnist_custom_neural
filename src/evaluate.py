@@ -1,6 +1,5 @@
-import pickle
-from train import get_predictions, start_training
-from utils import is_model_generated, get_custom_model_path, read_mnist_images
+from src.train import get_predictions, load_model
+from src.utils import  read_mnist_images
 import cupy as cp
 
 def compute_accuracy(predictions, labels):
@@ -27,22 +26,15 @@ def test_random_samples(X_test, Y_test, W1, b1, W2, b2, num_samples=5):
         print()
 
 
-def evaluate():
-    if not is_model_generated():
-        print('No pretrained model detected...')
-        start_training()
-    else:
-        print('Pretrained model detected')
-
-    best_params = None
-    with open(get_custom_model_path(), 'rb') as file:
-        best_params = pickle.load(file)
+def evaluate(test_images, test_labels):
+    best_params = load_model()
+    print(test_images.shape)
+    print(test_labels.shape)
+    
     W1_best = best_params['W1']
     b1_best = best_params['b1']
     W2_best = best_params['W2']
     b2_best = best_params['b2']
-
-    test_images, test_labels = read_mnist_images('test')
 
     predictions = get_predictions(test_images, W1_best, b1_best, W2_best, b2_best)
     accuracy = compute_accuracy(predictions, test_labels)
@@ -53,4 +45,5 @@ def evaluate():
     print(f'Accuracy of the model is: {accuracy}')
 
 if __name__ == '__main__':
-    evaluate()
+    test_images, test_labels = read_mnist_images('test')
+    evaluate(test_images, test_labels)

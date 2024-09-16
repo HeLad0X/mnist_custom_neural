@@ -2,8 +2,8 @@
 import pickle
 import cupy as cp
 import os
-from model import start_hyperparameter_tuning, forward_propagation
-from utils import read_mnist_images, get_custom_model_folder, get_custom_model_path, is_model_generated
+from src.model import start_hyperparameter_tuning, forward_propagation
+from src.utils import read_mnist_images, get_custom_model_folder, get_custom_model_path, is_model_generated
 
 def save_best_params(best_params):
     # Check if folder exists otherwise create one
@@ -19,9 +19,7 @@ def save_best_params(best_params):
     print('Model saved...')
 
 
-def train_model():
-    # Importing the required datasets
-    image_train, label_train = read_mnist_images()
+def train_model(image_train, label_train):
 
     # Start hyperparameter tuning
     best_params = start_hyperparameter_tuning(image_train, label_train)
@@ -29,14 +27,14 @@ def train_model():
     return best_params
 
 
-def start_training():
+def start_training(image_train, label_train):
     # Check if the model exists:
     if is_model_generated():
         print('NN Model already generated')
         return
     
     print('Starting the model training...')
-    best_params = train_model()
+    best_params = train_model(image_train, label_train)
 
     # Saving the best parameters to a pickle file
     save_best_params(best_params)
@@ -50,5 +48,20 @@ def get_predictions(X, W1, b1, W2, b2):
     
     return predictions
 
+def load_model():
+    if not is_model_generated():
+        print('No pretrained model detected...')
+        start_training()
+    else:
+        print('Pretrained model detected')
+
+    best_params = None
+    with open(get_custom_model_path(), 'rb') as file:
+        best_params = pickle.load(file)
+
+    return best_params
+
 if __name__ == '__main__':
-    start_training()
+    # Importing the required datasets
+    image_train, label_train = read_mnist_images()
+    start_training(image_train, label_train)

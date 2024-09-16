@@ -1,5 +1,5 @@
 import cupy as cp
-from config import path_obj, ParamConfig
+from src.config import path_obj, ParamConfig
 import struct
 
 def read_mnist_images(datatype='train'):

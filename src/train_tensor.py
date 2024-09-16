@@ -1,7 +1,7 @@
 import tensorflow as tf
 import keras_tuner as kt
 import numpy as np
-from utils import read_mnist_images
+from src.utils import read_mnist_images
 from sklearn.metrics import classification_report
 
 # Read and prepare the MNIST dataset
